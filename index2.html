@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
         }
         
         .header, .section-title {
@@ -27,7 +27,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 20px;
+            padding: 20px 20px;
             border-radius: 10px;
             background-color: #fff;
             border: 1px solid #d4f1ff;
@@ -42,7 +42,7 @@
             font-weight: bold;
             background-color: #d4f1ff;
             padding: 5px 10px;
-            border-radius: 10px;
+            border-radius: 80px;
             text-decoration: none;
         }
    
@@ -52,10 +52,11 @@
             margin-bottom: 30px;
             border-radius: 8px;
             border: 1px solid #e1e1e1;
-            text-align: center;
+            text-align: start;
         }
         .damage-analysis h5 {
             margin-bottom: 15px;
+            text-align: start;
         }
         .damage-analysis p {
             font-size: 16px;
@@ -73,7 +74,11 @@
         .damage-images {
             display: flex;
             gap: 15px;
-            justify-content: center;
+            justify-content: start;
+        }
+        h5{
+            font-weight: 700;
+            text-align: start;
         }
     </style>
 </head>
@@ -82,12 +87,10 @@
     <div class="container my-5">
         <!-- Header Section -->
         <div class="header d-flex justify-content-between align-items-center mb-5">
-            <img src="https://via.placeholder.com/150" alt="Logo">
-            <div>
-                <h1>SERVIS-CENTRUM .CZ</h1>
-                <h2>Zpráva o přehídce</h2>
-            </div>
+            <img src="./icon2.png" style="width: 800px; height:100px" alt="Logo_left">
+          
             <div class="text-end">
+                <img src="./icon1.svg"" alt="Logo_left">
                 <p><strong>Datum prohlídky:</strong> 16.08.2024</p>
                 <p><strong>Datum výroby:</strong> 16.08.2024</p>
                 <p><strong>Prohlídku vykonal:</strong> John Doe</p>
