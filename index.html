@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 24px;
+      color: #333;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .data-row {
+      margin-bottom: 15px;
+    }
+    .data-label {
+      font-weight: bold;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Customer Report</h1>
+  
+  <div class="data-row">
+    <span class="data-label">SPZ:</span> <?= data.clientData.SPZ ?>
+  </div>
+  <div class="data-row">
+    <span class="data-label">Majitel:</span> <?= data.clientData.Majitel ?>
+  </div>
+  <div class="data-row">
+    <span class="data-label">Provozovatel:</span> <?= data.clientData.Provozovatel ?>
+  </div>
+  <div class="data-row">
+    <span class="data-label">Výrobní číslo nadstavby:</span> <?= data.clientData.VyrobniCisloNadstavby ?>
+  </div>
+  <div class="data-row">
+    <span class="data-label">Výrobce nadstavby:</span> <?= data.clientData.VyrobceNadstavby ?>
+  </div>
+  <div class="data-row">
+    <span class="data-label">Typ nadstavby:</span> <?= data.clientData.TypNadstavby ?>
+  </div>
+  <div class="data-row">
+    <span class="data-label">Datum výroby:</span> <?= data.clientData.DatumVyroby ?>
+  </div>
+  <div class="data-row">
+    <span class="data-label">Datum prohlídky:</span> <?= data.formattedDate ?>
+  </div>
+
+  <h2>Poškození Analýza</h2>
+  <p>
+    Počet závad celkem: <?= data.analysisData.totalCount ?>, 
+    z toho <?= data.analysisData.tezkeCount ?> Těžké poškození a <?= data.analysisData.mirneCount ?> Mírné poškození.
+  </p>
+
+  <h3>Detailní Poškození</h3>
+  <table>
+    <tr>
+      <th>Column Header</th>
+      <th>Poškození Typ</th>
+    </tr>
+    <? for (var i = 0; i < data.analysisData.relevantData.length; i++) { ?>
+      <tr>
+        <td><?= data.analysisData.relevantData[i].header ?></td>
+        <td><?= data.analysisData.relevantData[i].value ?></td>
+      </tr>
+    <? } ?>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h2>Odkaz na fotografie poškození</h2>
+  <p>
+    Fotografie poškození můžete najít na tomto odkazu: <a href="<?= data.folderLink ?>"><?= data.folderLink ?></a>
+  </p>
+</body>
+</html>
